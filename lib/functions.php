@@ -434,6 +434,12 @@ namespace Amp\Promise
      * @return Promise
      *
      * @throws \Error If the array is empty or a non-Promise is in the array.
+     *
+     * @template TValue
+     *
+     * @psalm-param array<array-key, Promise<TValue>|ReactPromise> $promises
+     * @psalm-assert array<array-key, Promise<TValue>|ReactPromise> $promises $promises
+     * @psalm-return Promise<TValue>
      */
     function first(array $promises): Promise
     {
