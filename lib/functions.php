@@ -483,6 +483,12 @@ namespace Amp\Promise
      * @return Promise
      *
      * @throws \Error If a non-Promise is in the array.
+     * 
+     * @template TValue
+     *
+     * @psalm-param array<array-key, Promise<TValue>|ReactPromise> $promises
+     * @psalm-assert array<array-key, Promise<TValue>|ReactPromise> $promises $promises
+     * @psalm-return Promise<array{0: array<array-key, \Throwable>, 1: array<array-key, TValue>}>
      */
     function some(array $promises, int $required = 1): Promise
     {
